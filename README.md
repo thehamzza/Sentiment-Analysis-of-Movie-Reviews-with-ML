@@ -98,6 +98,13 @@ tar -xvzf aclImdb_v1.tar.gz -C data
  1. Preprocessed the unlabeled data in the same way as the labeled data.
  2. Used the trained models to predict the sentiments of the unlabeled data.
  3. Conducted exploratory analysis to understand the model's behavior and consistency on unlabeled data.
+![review-test](review-test.jpg)
+
+### Testing User Input Review
+We tested the models on a live user input review with ambiguous language to evaluate their performance. 
+The review was: "It was just okay, I had seen better movies before. Only if they could make it more interesting." 
+Despite the unclear sentiment, all three models (Logistic Regression, SVM, XGBoost) correctly predicted it as Negative (0). 
+This demonstrates the models' accuracy and robustness, even with challenging and confusing inputs, ensuring reliable sentiment analysis for real-world applications.
 
 ### Results
 - **Logistic Regression**
@@ -137,8 +144,8 @@ tar -xvzf aclImdb_v1.tar.gz -C data
    - Example: "movie" was becoming "movi" and "characters" was becoming "charact".
    
 2. **Handling Class Imbalance**:
-   - The dataset had an imbalance between positive and negative reviews, requiring techniques to ensure balanced learning.
-
+   - The dataset could have an imbalance between positive and negative reviews, requiring techniques to ensure balanced learning, causing the model to be biased towards the majority class.
+   - This imbalance could lead to inaccurate predictions, especially for the minority class (e.g., fewer negative reviews).
 ## Solutions
 1. **Text Preprocessing**:
    - Used NLTK for text preprocessing, including stop word removal, punctuation removal, and lemmatization.
@@ -147,9 +154,11 @@ tar -xvzf aclImdb_v1.tar.gz -C data
 
 2. **Class Imbalance**:
    - Applied class weights to the models to handle class imbalance.
-   - Used `class_weight='balanced'` for Logistic Regression and SVM.
-   - Set `scale_pos_weight` parameter for XGBoost.
-
+   - Used `class_weight='balanced'` for Logistic Regression and SVM, to automatically adjust weights inversely proportional to class frequencies.
+   - Set `scale_pos_weight` to balance the weight of the positive class.
+3. **Improved Accuracy**:
+   - These techniques ensured that the models considered both classes fairly, leading to more accurate and robust predictions.
+     
 ## Conclusion
 The SVM model performed the best overall in terms of accuracy, precision, and F1 score. Class imbalance was effectively handled using class weights. Logistic Regression also performed very well, while the XGBoost model had lower performance compared to the other two. The challenges faced during text preprocessing were resolved through careful refinement of preprocessing steps, ensuring high-quality data for model training. This project successfully developed a robust sentiment analysis system, leveraging labeled and unlabeled data to check performance.
 
