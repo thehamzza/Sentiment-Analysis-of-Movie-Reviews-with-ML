@@ -71,7 +71,7 @@ tar -xvzf aclImdb_v1.tar.gz -C data
    - Evaluate the models.
    - Perform self-training with unsupervised data.
 
-## Technical Summary
+# Technical Summary
 
 ### Data Preprocessing
 1. **Loading the Dataset**: Loaded 50,000 movie reviews (25,000 train and 25,000 test) and additional 50,000 unlabeled documents for unsupervised learning.
