@@ -1,4 +1,5 @@
 # Sentiment Analysis System for Movie Reviews
+![banner](banner.webp)
 
 ## Project Title
 **Sentiment Analysis System for Movie Reviews Using Traditional Machine Learning and Self-Training**
