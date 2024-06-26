@@ -98,13 +98,14 @@ tar -xvzf aclImdb_v1.tar.gz -C data
  1. Preprocessed the unlabeled data in the same way as the labeled data.
  2. Used the trained models to predict the sentiments of the unlabeled data.
  3. Conducted exploratory analysis to understand the model's behavior and consistency on unlabeled data.
-![review-test](review-test.jpg)
+
 
 ### Testing User Input Review
 We tested the models on a live user input review with ambiguous language to evaluate their performance. 
 The review was: "It was just okay, I had seen better movies before. Only if they could make it more interesting." 
 Despite the unclear sentiment, all three models (Logistic Regression, SVM, XGBoost) correctly predicted it as Negative (0). 
 This demonstrates the models' accuracy and robustness, even with challenging and confusing inputs, ensuring reliable sentiment analysis for real-world applications.
+![review-test](review-test.jpg)
 
 ### Results
 - **Logistic Regression**
