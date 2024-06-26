@@ -14,6 +14,7 @@ Developed a sentiment analysis system using scikit-learn and XGBoost to accurate
 - [Challenges](#challenges)
 - [Solutions](#solutions)
 - [Conclusion](#conclusion)
+- [Improvements and Future Work](#improvements-and-future-work)
 - [Acknowledgements](#acknowledgements)
 
 ## Installation
