@@ -1,4 +1,3 @@
-```markdown
 # Sentiment Analysis System for Movie Reviews
 
 ## Project Title
@@ -11,13 +10,18 @@ Developed a sentiment analysis system using scikit-learn and XGBoost to accurate
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technical Summary](#technical-summary)
+- [Analysis](#analysis)
+- [Challenges](#challenges)
+- [Solutions](#solutions)
+- [Conclusion](#conclusion)
 - [Acknowledgements](#acknowledgements)
 
 ## Installation
 
 ### Prerequisites
 - Python 3.8 or higher
-- Jupyter Notebook
+- Visual Studio Code (VS Code)
+- Jupyter Notebook extension for VS Code
 - Git
 
 ### Clone the Repository and Set Up Environment
@@ -41,12 +45,22 @@ tar -xvzf aclImdb_v1.tar.gz -C data
 
 ## Usage
 
-### Running the Jupyter Notebook
-1. Start Jupyter Notebook:
-   ```sh
-   jupyter notebook
-   ```
-2. Open the `Sentiment_Analysis.ipynb` file in Jupyter Notebook.
+### Running the Jupyter Notebook in VS Code
+1. **Open the Project in VS Code**:
+   - Start VS Code.
+   - Open the project folder (`sentiment-analysis-system`).
+
+2. **Set Up Python Interpreter**:
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) to open the Command Palette.
+   - Type `Python: Select Interpreter` and select the virtual environment you created (`venv`).
+
+3. **Install Jupyter Extension**:
+   - If you haven't already, install the Jupyter extension for VS Code from the Extensions view (`Ctrl+Shift+X`).
+
+4. **Open and Run the Notebook**:
+   - Navigate to the `Sentiment_Analysis.ipynb` file in the Explorer view.
+   - Click on the file to open it.
+   - Click on the `Run All` button at the top to execute all cells in the notebook, or run cells individually.
 
 ### Running the Analysis
 1. Follow the instructions in the Jupyter Notebook to:
@@ -100,8 +114,43 @@ tar -xvzf aclImdb_v1.tar.gz -C data
   - Recall: 0.8716
   - F1 Score: 0.8568619740464019
 
+## Analysis
+
+### Logistic Regression vs. SVM
+- **SVM** had slightly better performance metrics due to its ability to find an optimal separating hyperplane, leading to better generalization.
+- Both models performed well, likely due to the linear separability of the data after TF-IDF transformation.
+
+### XGBoost
+- **XGBoost** requires careful tuning. The default parameters might not have been optimal for this dataset.
+- Potential overfitting without proper tuning, leading to lower performance on the test data.
+- Further adjustments and techniques might be needed for better handling of class imbalance.
+
+## Challenges
+1. **Preprocessing the Text Data**:
+   - During preprocessing, some words were losing characters, which affected the quality of the data. This issue was particularly challenging as it could impact the model's performance.
+   - Example: "movie" was becoming "movi" and "characters" was becoming "charact".
+   
+2. **Handling Class Imbalance**:
+   - The dataset had an imbalance between positive and negative reviews, requiring techniques to ensure balanced learning.
+
+## Solutions
+1. **Text Preprocessing**:
+   - Used NLTK for text preprocessing, including stop word removal, punctuation removal, and lemmatization.
+   - Implemented various methods and refined preprocessing steps to preserve the integrity of the words.
+   - Example: Ensured that lemmatization was done correctly and stopwords were removed without altering meaningful parts of the text.
+
+2. **Class Imbalance**:
+   - Applied class weights to the models to handle class imbalance.
+   - Used `class_weight='balanced'` for Logistic Regression and SVM.
+   - Set `scale_pos_weight` parameter for XGBoost.
+
+## Conclusion
+The SVM model performed the best overall in terms of accuracy, precision, and F1 score. Class imbalance was effectively handled using class weights. Logistic Regression also performed very well, while the XGBoost model had lower performance compared to the other two. The challenges faced during text preprocessing were resolved through careful refinement of preprocessing steps, ensuring high-quality data for model training. This project successfully developed a robust sentiment analysis system, leveraging both labeled and unlabeled data to enhance performance.
+
 ## Acknowledgements
 - This project uses the [Large Movie Review Dataset](https://ai.stanford.edu/~amaas/data/sentiment/) provided by Stanford AI Lab.
 - The project was developed using Python, scikit-learn, NLTK, and XGBoost.
 - Special thanks to the authors of the dataset for making it available for research purposes.
 ```
+
+Copy and paste this content into your `README.md` file. This document provides comprehensive instructions on setting up the project, running the analysis, a technical summary, and detailed insights on challenges faced and solutions implemented. If you need any further adjustments or have any questions, feel free to ask!
