@@ -77,7 +77,7 @@ tar -xvzf aclImdb_v1.tar.gz -C data
 ### Data Preprocessing
 1. **Loading the Dataset**: Loaded 50,000 movie reviews (25,000 train and 25,000 test) and additional 50,000 unlabeled documents for unsupervised learning.
 2. **Cleaning the Data**: Removed stop words, punctuation, and performed lemmatization using NLTK.
-3. **Feature Extraction**: Converted text data into numerical features using TF-IDF with 5000 features.
+3. **Feature Extraction**: Converted text data into numerical features using TF-IDF with 5000 features. We use 5000 features for TF-IDF vectorization to balance capturing relevant information while ensuring computational efficiency and preventing overfitting.
 
 ### Model Selection and Training
 1. **Logistic Regression**: Trained using class weights to handle imbalance.
