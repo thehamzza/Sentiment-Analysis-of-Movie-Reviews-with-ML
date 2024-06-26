@@ -93,10 +93,10 @@ tar -xvzf aclImdb_v1.tar.gz -C data
 - **Recall**
 - **F1 Score**
 
-### Self-Training with Unlabeled Data
-1. Predicted labels for the unlabeled data using the initial model.
-2. Selected the most confident predictions to create additional labeled data.
-3. Retrained the model using the combined dataset of original and newly labeled data.
+ ### Using Unlabeled Data for Testing
+ 1. Preprocessed the unlabeled data in the same way as the labeled data.
+ 2. Used the trained models to predict the sentiments of the unlabeled data.
+ 3. Conducted exploratory analysis to understand the model's behavior and consistency on unlabeled data.
 
 ### Results
 - **Logistic Regression**
