@@ -27,7 +27,7 @@ Developed a sentiment analysis system using scikit-learn and XGBoost to accurate
 ### Clone the Repository and Set Up Environment
 ```sh
 # Clone the repository
-git clone https://github.com/your-username/sentiment-analysis-system.git
+git clone https://github.com/thehamzza/Sentiment-Analysis-of-Movie-Reviews-with-ML.git
 cd sentiment-analysis-system
 
 # Create and activate a virtual environment
@@ -58,7 +58,7 @@ tar -xvzf aclImdb_v1.tar.gz -C data
    - If you haven't already, install the Jupyter extension for VS Code from the Extensions view (`Ctrl+Shift+X`).
 
 4. **Open and Run the Notebook**:
-   - Navigate to the `Sentiment_Analysis.ipynb` file in the Explorer view.
+   - Navigate to the `main.ipynb` file in the Explorer view.
    - Click on the file to open it.
    - Click on the `Run All` button at the top to execute all cells in the notebook, or run cells individually.
 
@@ -145,12 +145,24 @@ tar -xvzf aclImdb_v1.tar.gz -C data
    - Set `scale_pos_weight` parameter for XGBoost.
 
 ## Conclusion
-The SVM model performed the best overall in terms of accuracy, precision, and F1 score. Class imbalance was effectively handled using class weights. Logistic Regression also performed very well, while the XGBoost model had lower performance compared to the other two. The challenges faced during text preprocessing were resolved through careful refinement of preprocessing steps, ensuring high-quality data for model training. This project successfully developed a robust sentiment analysis system, leveraging both labeled and unlabeled data to enhance performance.
+The SVM model performed the best overall in terms of accuracy, precision, and F1 score. Class imbalance was effectively handled using class weights. Logistic Regression also performed very well, while the XGBoost model had lower performance compared to the other two. The challenges faced during text preprocessing were resolved through careful refinement of preprocessing steps, ensuring high-quality data for model training. This project successfully developed a robust sentiment analysis system, leveraging labeled and unlabeled data to check performance.
+
+## Improvements and Future Work
+
+### Model Comparison and Optimization
+To further enhance the performance of the sentiment analysis system, future work could involve comparing a broader range of machine learning models, including deep learning approaches such as LSTM or BERT, which have shown significant improvements in natural language processing tasks. Hyperparameter optimization techniques, such as grid search or random search, could be employed to fine-tune the models for better accuracy and generalization.
+
+### Semi-Supervised and Unsupervised Learning
+Utilizing the large amount of unlabeled data available in the dataset through semi-supervised learning approaches can provide significant improvements. Techniques like self-training, where an initial model is trained on labeled data and then used to predict labels for the unlabeled data, can iteratively improve the model's performance. Additionally, methods like label propagation can help spread label information from labeled to unlabeled data based on similarity. For a completely unsupervised approach, clustering algorithms or topic modeling can be explored to identify patterns and sentiments in the reviews without relying on labeled data.
+
+### Advanced Text Preprocessing and Feature Extraction
+Improving text preprocessing steps, such as handling negations more effectively and using advanced lemmatization techniques, can lead to better feature representation. Additionally, experimenting with different feature extraction methods, such as word embeddings (Word2Vec, GloVe) or contextual embeddings (BERT embeddings), can capture more semantic information from the text, potentially leading to better model performance.
+
+By implementing these improvements and exploring various machine learning techniques, the sentiment analysis system can be made more robust, accurate, and capable of handling diverse and large-scale datasets effectively.
+
 
 ## Acknowledgements
 - This project uses the [Large Movie Review Dataset](https://ai.stanford.edu/~amaas/data/sentiment/) provided by Stanford AI Lab.
 - The project was developed using Python, scikit-learn, NLTK, and XGBoost.
 - Special thanks to the authors of the dataset for making it available for research purposes.
 ```
-
-Copy and paste this content into your `README.md` file. This document provides comprehensive instructions on setting up the project, running the analysis, a technical summary, and detailed insights on challenges faced and solutions implemented. If you need any further adjustments or have any questions, feel free to ask!
