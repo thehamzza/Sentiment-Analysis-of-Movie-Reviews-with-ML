@@ -115,6 +115,10 @@ tar -xvzf aclImdb_v1.tar.gz -C data
   - Recall: 0.8716
   - F1 Score: 0.8568619740464019
 
+#### Comparison of Evaluation Metrics for Models
+![comparison-of-metrics](comparison-of-metrics.png)
+    
+
 ## Analysis
 
 ### Logistic Regression vs. SVM
