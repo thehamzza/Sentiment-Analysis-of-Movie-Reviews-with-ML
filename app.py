@@ -142,7 +142,7 @@ elif page == "About":
     st.pyplot(plt)
 
     st.header("Project Code and Technical Report 💼")
-    st.write("Check out the project code and technical report on [GitHub](https://github.com/your-github-profile/your-repo) for more details on data preprocessing, model training, and evaluation.")
+    st.write("Check out the project code and technical report on [GitHub](https://github.com/thehamzza/Sentiment-Analysis-of-Movie-Reviews-with-ML/) for more details on data preprocessing, model training, and evaluation.")
 
 # Contact Page
 elif page == "Contact":
