@@ -182,3 +182,4 @@ By implementing these improvements and exploring various machine learning techni
 - The project was developed using Python, scikit-learn, NLTK, and XGBoost.
 - Special thanks to the authors of the dataset for making it available for research purposes.
 ```
+](https://github.com/thehamzza/Sentiment-Analysis-of-Movie-Reviews-with-ML)
