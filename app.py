@@ -4,6 +4,15 @@ import numpy as np
 import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+
+# Set page configuration with title and favicon
+st.set_page_config(
+    page_title="Sentiment Analysis App",
+    page_icon="favicon.ico",  # You can use an emoji or a custom image (e.g., "favicon.ico")
+    layout="centered",  # Options: "centered" or "wide"
+    initial_sidebar_state="auto",  # Options: "auto", "expanded", "collapsed"
+)
+
 # Load pre-trained model and vectorizer
 model = joblib.load('svm_model.joblib')
 vectorizer = joblib.load('vectorizer.joblib')
@@ -61,7 +70,8 @@ page = st.selectbox("Menu", ["Home", "About", "Contact"], index=0)
 
 # Home Page
 if page == "Home":
-    st.markdown("<div class='title-style'><h1>🎥 Sentiment Analysis App 🎥</h1></div>", unsafe_allow_html=True)
+    
+    st.markdown("<div class='title-style'><h1> Sentiment Analysis App </h1></div>", unsafe_allow_html=True)
     st.write("Welcome! Enter a movie review to see if it's **positive** or **negative**. Let's get started!")
 
     # Display a banner image
